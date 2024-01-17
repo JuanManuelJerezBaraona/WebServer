@@ -3,7 +3,6 @@ const hbs = require('hbs');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Handlebars
 app.set('view engine', 'hbs');
@@ -35,10 +34,6 @@ app.get('/elements', (req, res) => {
 
 app.get('*', (req, res) => {
     res.send('404 | Page not found');
-});
-
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
 });
 
 module.exports = app;
