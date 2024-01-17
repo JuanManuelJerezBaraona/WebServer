@@ -5,6 +5,8 @@ require('dotenv').config();
 
 const app = express();
 
+const PORT = process.env.PORT || 8080;
+
 // Handlebars
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
@@ -37,8 +39,6 @@ app.get('*', (req, res) => {
     res.send('404 | Page not found');
 });
 
-app.listen(process.env.PORT, () => {
-    console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
+app.listen(8080, () => {
+    console.log(`Servidor corriendo en puerto ${PORT}`);
 });
-
-module.exports = app;
