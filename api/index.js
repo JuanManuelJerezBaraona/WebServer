@@ -36,4 +36,8 @@ app.get('*', (req, res) => {
     res.send('404 | Page not found');
 });
 
+app.listen(process.env.PORT, () => {
+    console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
+});
+
 module.exports = app;
