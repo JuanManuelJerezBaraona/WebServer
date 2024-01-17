@@ -1,6 +1,5 @@
 const express = require('express');
 const hbs = require('hbs');
-require('dotenv').config();
 
 const app = express();
 
@@ -34,10 +33,6 @@ app.get('/elements', (req, res) => {
 
 app.get('*', (req, res) => {
     res.send('404 | Page not found');
-});
-
-app.listen(process.env.PORT, () => {
-    console.log(`Servidor corriendo en puerto ${process.env.PORT}`);
 });
 
 module.exports = app;
